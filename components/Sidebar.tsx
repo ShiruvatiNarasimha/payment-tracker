@@ -17,7 +17,7 @@ const Sidebar = ({user} : SiderbarProps) => {
         <nav className='flex flex-col gap-4'>
             <Link href="/"
             className='mb-12
-            cursor-pointer
+            cursor-pointer flex
             items-center gap-2'>
                 <Image
                 src="/icons/logo.svg"
@@ -44,11 +44,32 @@ const Sidebar = ({user} : SiderbarProps) => {
                             ('sidebar-link', {
                                 'bg-bank-gradient': isActive})}
                         >
-                            {item.label}
+                            <div 
+                            className='relative
+                            size-6'>
+                                <Image
+                                src={item.imgURL}
+                                alt={item.label}
+                                fill
+                                className={cn({
+                                    "brightness-[3] invert-0":
+                                    isActive
+                                })}
+                                />
+                            </div>
+                            <p className={cn
+                                ('sidebar-label',{
+                                    "!text-white": isActive
+                                })}>
+                                {item.label}
+                            </p>
                         </Link>
                 )
             })}
+
+            USER
         </nav>
+        FOOTER
       </section>
   )
 }
