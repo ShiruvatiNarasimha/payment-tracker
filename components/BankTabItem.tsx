@@ -9,9 +9,18 @@ export const BankTabItem = ({ account, appwriteItemId }: BankTabItemProps) => {
   const router = useRouter();
   const isActive = appwriteItemId === account?.appwriteItemId;
 
+  const handleBankChange = () => {
+    const newUrl = formUrlQuery({
+      params: searchParams.toString(),
+      key: "id",
+      value: account?.appwriteItemId,
+    });
+    router.push(newUrl, { scroll: false });
+  };
+
   return (
     <div
-      onClick={}
+      onClick={handleBankChange}
       className={cn(`banktab-item`, {
         " border-blue-600": isActive,
       })}
