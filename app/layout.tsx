@@ -13,9 +13,9 @@ const ibmPlexSerif = IBM_Plex_Serif({
 
 export const metadata: Metadata = {
   title: "Payment",
-  description: "Horizon is a modern banking platform for everyone.",
+  description: "Payment is a modern banking platform for everyone.",
   icons: {
-    icon: "/icons/logo.svg",
+    icon: "/icons/",
   },
 };
 
